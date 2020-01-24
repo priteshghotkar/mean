@@ -1,12 +1,15 @@
 const express=require('express');
 const mongose=require('mongoose');
 const Usermodel=require('../models/userModel');
-const router=new express().router();
+const router=express.Router();
 
-router.get('/',async(req,resp)=>{
+router.post('/save',(req,resp)=>{
     if(req)
     {
-        
+        console.log(req.body);
+        const user=new Usermodel(req.body);
+        user.save();
+        resp.sendStatus(200);
     }
 
 

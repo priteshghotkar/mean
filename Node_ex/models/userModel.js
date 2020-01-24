@@ -10,4 +10,4 @@ const UserSchema = mongoose.model('userdetail',{
      profilePic: { data: Buffer, contentType: String }    
   });
 
-module.exports=User;
+module.exports=UserSchema;
